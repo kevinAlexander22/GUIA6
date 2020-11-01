@@ -1,0 +1,32 @@
+﻿@model EjemploMVC.Models.Promedio
+@{
+    ViewBag.Title = "Alumno";
+}
+
+<h2>Notas</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(Model => Model.nota1, new { @class = "control-label" })
+        @Html.TextBoxFor(Model => Model.nota1, new { @class = "form-control", type = "number" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(Model => Model.nota2, new { @class = "control-label" })
+        @Html.TextBoxFor(Model => Model.nota2, new { @class = "form-control", type = "number" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(Model => Model.nota3, new { @class = "control-label" })
+        @Html.TextBoxFor(Model => Model.nota3, new { @class = "form-control", type = "number" })
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-success" />
+    </div>
+}
+<br />
+@if (ViewBag.resultadoN != null)
+{
+    <p>Su nota es:&nbsp;@ViewBag.resultadoN</p>
+}
+

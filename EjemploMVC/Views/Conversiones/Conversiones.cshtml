@@ -1,0 +1,68 @@
+﻿@model EjemploMVC.Models.TiposCalculo
+@{
+    ViewBag.Title = "Conversiones";
+}
+
+<h2>Conversiones</h2>
+<h2>Conversiones Temperatura </h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(Model => Model.temperatura, new { @class = "control-label" })
+        @Html.TextBoxFor(Model => Model.temperatura, new { @class = "form-control", type = "decimal" })
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-success" />
+    </div>
+}
+@if (ViewBag.resultadoC != null)
+{
+    <p>De kelvin aCelsius:&nbsp;@ViewBag.resultadoC</p>
+}
+@if (ViewBag.resultadoK != null)
+{
+    <p>De Celcius a kelvin:&nbsp;@ViewBag.resultadoK</p>
+}
+<h2>Conversiones Peso </h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(Model => Model.peso, new { @class = "control-label" })
+        @Html.TextBoxFor(Model => Model.peso, new { @class = "form-control", type = "decimal" })
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-success" />
+    </div>
+}
+@if (ViewBag.resultadoKg != null)
+{
+    <p>De Kg a Lb:&nbsp;@ViewBag.resultadoKg</p>
+}
+@if (ViewBag.resultadolb != null)
+{
+    <p>De Lb a Kg:&nbsp;@ViewBag.resultadolb</p>
+}
+<h2>Metros a Pulgas</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(Model => Model.longitud, new { @class = "control-label" })
+        @Html.TextBoxFor(Model => Model.longitud, new { @class = "form-control", type = "decimal" })
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-success" />
+    </div>
+}
+@if (ViewBag.resultadomt != null)
+{
+    <p>De Mt a Pulg:&nbsp;@ViewBag.resultadomt</p>
+}
+
+
